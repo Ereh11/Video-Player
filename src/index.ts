@@ -36,7 +36,7 @@ class CustomVideoPlayer {
         this.controlsContainer.classList.add('controls');
         // Create play/pause button
         this.playPauseBtn = this.createButton('▶', () => this.togglePlay());
-        this.playPauseBtn.classList.add('control-button');
+        this.playPauseBtn.classList.add('control-btn');
         // Create progress bar
         this.progressBar = document.createElement('input');
         this.progressBar.type = 'range';
@@ -53,7 +53,7 @@ class CustomVideoPlayer {
         this.volumeBar.classList.add('volume-bar');
         // Create fullscreen button
         this.fullscreenBtn = this.createButton('⛶', () => this.toggleFullscreen());
-        this.fullscreenBtn.classList.add('control-button');
+        this.fullscreenBtn.classList.add('control-btn');
         // Add step back and step forward buttons
         this.stepBackBtn = this.createButton('⊴', () => this.step(-10));
         this.stepForwardBtn = this.createButton('⊵', () => this.step(10));
@@ -195,10 +195,9 @@ class CustomVideoPlayer {
         const style = document.createElement('style');
         style.textContent = `
             #${this.containerId} {
-                max-width: 800px;
+                max-width: 600px;
                 margin: 0 auto;
                 position: relative;
-                background: #000;
                 border-radius: 10px;
                 overflow: hidden;
             }
@@ -228,7 +227,7 @@ class CustomVideoPlayer {
                 gap: 10px;
                 width: 100%;
             }
-            .control-button {
+            .control-btn {
                 background: none;
                 border: none;
                 color: white;
@@ -237,7 +236,7 @@ class CustomVideoPlayer {
                 padding: 5px;
                 transition: color 0.2s;
             }
-            .control-button:hover {
+            .control-btn:hover {
                 color: #ff0000;
             }
             .progress-bar {
@@ -262,11 +261,6 @@ class CustomVideoPlayer {
             .volume-bar:hover {
                 height: 8px;
             }
-            .step-button {
-                font-size: 18px;
-                padding: 5px 8px;
-                margin: 0 5px;
-            }
             .progress-bar {
                 margin: 0 10px;
                 flex-grow: 1;
@@ -281,15 +275,12 @@ class CustomVideoPlayer {
 
         const styleTime = document.createElement('style');
         styleTime.textContent = `
-        /* Time displays */
         .time-display {
             font-family: monospace;
             font-size: 14px;
             color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-
-        /* Progress bar container */
         .progress-container {
             flex-grow: 1;
             display: flex;
