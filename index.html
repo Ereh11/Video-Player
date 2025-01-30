@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Video Player</title>
+  </head>
+  <body>
+    <div id="video-container"></div>
+    <script type="module">
+      import CustomVideoPlayer from "./dist/index.js";
+
+      new CustomVideoPlayer(
+        "video-container",
+        "./video/yourName.mp4"
+      );
+    </script>
+  </body>
+</html>
