@@ -1,14 +1,22 @@
 {
-  "name": "video-player",
+  "name": "video-player-lib",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "Custom HTML video player with advanced controls",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["video", "player", "html5", "custom-controls"],
+  "author": "Hany Saad hanysaadstd@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "typescript": "^5.7.3"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
+

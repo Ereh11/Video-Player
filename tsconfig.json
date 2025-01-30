@@ -5,7 +5,9 @@
         "strict": true,
         "esModuleInterop": true,
         "strictPropertyInitialization": false,
+        "declaration": true,
         "outDir": "./dist",
         "rootDir": "./src"
-    }
+    },
+    "include": ["src/**/*"]
 }
