@@ -1,6 +1,6 @@
 {
   "name": "video-player-lib",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "index.js",
   "description": "Custom HTML video player with advanced controls",
   "types": "dist/index.d.ts",
