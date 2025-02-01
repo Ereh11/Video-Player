@@ -43,8 +43,8 @@ class CustomVideoPlayer {
         this.fullscreenBtn = this.createButton('⛶', () => this.toggleFullscreen());
         this.fullscreenBtn.classList.add('control-btn');
         // Add step back and step forward buttons
-        this.stepBackBtn = this.createButton('../assets/skip-backward.svg', () => this.step(-10));
-        this.stepForwardBtn = this.createButton('../assets/skip-forwardward.svg', () => this.step(10));
+        this.stepBackBtn = this.createButton('⏪', () => this.step(-10));
+        this.stepForwardBtn = this.createButton('⏩', () => this.step(10));
         this.stepBackBtn.classList.add('step-backBtn');
         this.stepForwardBtn.classList.add('step-ForwardBtn');
         // Create time displays
@@ -77,19 +77,9 @@ class CustomVideoPlayer {
         const leftSeconds = Math.floor(seconds % 60);
         return `${minutes}:${leftSeconds.toString()}`;
     }
-    createButton(iconOrText, clickHandler) {
+    createButton(text, clickHandler) {
         const button = document.createElement('button');
-        if (iconOrText.endsWith('.svg')) {
-            const img = document.createElement('img');
-            img.src = iconOrText;
-            img.alt = 'Button Icon';
-            img.style.width = '24px';
-            img.style.height = '24px';
-            button.appendChild(img);
-        }
-        else {
-            button.textContent = iconOrText;
-        }
+        button.textContent = text;
         button.addEventListener('click', clickHandler);
         return button;
     }
@@ -222,7 +212,7 @@ class CustomVideoPlayer {
                 transition: color 0.2s;
             }
             .control-btn:hover {
-                color:rgb(32, 132, 199);
+                color: #ff0000;
             }
             .progress-bar {
                 flex-grow: 1;
@@ -243,6 +233,12 @@ class CustomVideoPlayer {
                 cursor: pointer;
                 transition: height 0.2s;
             }
+            button{
+                background: none;
+                outline: none;
+                padding: 0;
+                margin: 0;
+            }
             .volume-bar:hover {
                 height: 8px;
             }
@@ -250,26 +246,10 @@ class CustomVideoPlayer {
                 margin: 0 10px;
                 flex-grow: 1;
             }
-            button 
-            {
-                color: white;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 5px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .step-backBtn:hover, .step-ForwardBtn:hover{
+                background-color: rgb(58, 130, 238);
             }
-            button img {
-                transition: transform 0.2s;
-            }
-            button:hover img {
-                transform: scale(1.1);
-            }
-            .step-backBtn {
-                margin-right: 5px;
-            }
+
         `;
         // Append styles to the head to run the styles
         document.head.appendChild(style);
